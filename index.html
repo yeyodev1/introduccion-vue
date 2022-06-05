@@ -10,12 +10,13 @@
 
 <body>
     <script src="https://unpkg.com/vue@next"></script>
-    <div id="app"> {{ text }} </div>
+    <div id="app"> </div>
     <script>
         const vm = Vue.createApp({
             data: () => ({
-                text: "Hola vue"
-            })
+                text: "<p>Holaaa</p>"
+            }),
+            template: `<div v-once v-html="text"></div>`
         }).mount("#app");
         console.log(vm)
     </script>
