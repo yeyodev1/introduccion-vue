@@ -16,10 +16,15 @@
     <script>
         const vm = Vue.createApp({
             data: () => ({
-                attr: "src",
-                img: "https://images.pexels.com/photos/12079516/pexels-photo-12079516.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                evt: "submit",
+                counter: 0,
             }),
-            template: `<img v-bind:[attr]="img" />`
+            methods: {
+                submit(form) {
+                    this.counter++;
+                }
+            },
+            template: `<form v-on:[evt]="submit"><button > {{ counter }} </button></form>`
         }).mount("#app");
         console.log(vm)
     </script>
